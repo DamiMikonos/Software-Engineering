@@ -14,8 +14,29 @@ public class Workout {
     this.workout_availability = workout_availability;
   }
 
-  
-  /* Get functions */
+  /* Setters */
+
+  public void setDate(String workout_date) {
+    this.workout_date = workout_date;
+  }
+
+  public void setTime(String workout_time) {
+    this.workout_time = workout_time;
+  }
+
+  public void setGym(String workout_gym) {
+    this.workout_gym = workout_gym;
+  }
+
+  public void setLevel(String workout_level) {
+    this.workout_level = workout_level;
+  }
+
+  public void setAvailability(int workout_availability) {
+    this.workout_availability = workout_availability;
+  }
+
+  /* Getters */
 
   public String getWorkoutDate(){
     return workout_date;

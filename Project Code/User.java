@@ -17,8 +17,33 @@ public class User
     this.user_number = user_number;
   }
   
+  /* Setters */
 
-  /* Get functions */
+  public void setID(int user_id) {
+    this.user_id = user_id;
+  }
+
+  public void setName(String user_name) {
+    this.user_name = user_name;
+  }
+
+  public void setSurname(String user_surname) {
+    this.user_surname = user_surname;
+  }
+
+  public void setAge(int user_age) {
+    this.user_age = user_age;
+  }
+
+  public void setEmail(String user_email) {
+    this.user_email = user_email;
+  }
+
+  public void setNumber(int user_number) {
+    this.user_number = user_number;
+  }
+
+  /* Getters */
 
   public int getID(){
     return user_id;

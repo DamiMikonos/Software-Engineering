@@ -11,6 +11,20 @@ public class WorkoutReservation {
   }
   
   
+  /* Setters */
+
+  public void setDate(String workoutReservation_Date) {
+    this.workoutReservation_Date = workoutReservation_Date;
+  }
+
+  public void setTime(String workoutReservation_Time) {
+    this.workoutReservation_Time = workoutReservation_Time;
+  }
+
+  public void setStatus(String workoutReservation_Status) {
+    this.workoutReservation_Status = workoutReservation_Status;
+  }
+
   /* Get functions */
 
   public String getWorkoutReservationDate(){
