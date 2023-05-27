@@ -33,7 +33,7 @@ public class Owner extends User
   /*Managing Gym Hours */
   public void manageHours(){
     /*Need to display List of Gyms Owned by called Owner */
-    getName()
+    getName();
     /*Select and use gym instance to set Hours */
   }
 }

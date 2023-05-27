@@ -1,4 +1,5 @@
-import java.time.LocalDateTime;
+import java.time.*;
+import java.util.ArrayList;
 
 public class Gym {
     private String gym_name;
@@ -7,6 +8,7 @@ public class Gym {
     private int gym_number;
     private LocalDateTime gym_hours;
     private String gym_owner;
+    private ArrayList<Workout> list_of_workouts = new ArrayList<Workout>();
 
     public Gym (String gym_name, String gym_city, String gym_address, int gym_number, LocalDateTime gym_hours, String gym_owner) {
         this.gym_name = gym_name;
@@ -53,4 +55,25 @@ public class Gym {
         }
         return ListOfGyms[];
     }
+
+
+
+    /* More Methods! */
+
+    public void addWorkout(Workout w) {
+		list_of_workouts.add(w);
+	}
+
+	public void removeWorkout(Workout w) {
+		list_of_workouts.remove(w);
+	}
+
+    /* Returns a list of workouts that corresponds to the trainee's prefered date and time*/
+    public void getWorkoutByDateTime(LocalDate d, LocalTime t){
+		for (int i = 0; i < list_of_workouts.size(); i++) {
+            if (list_of_workouts.get(i).getWorkoutDate() == d && list_of_workouts.get(i).getWorkoutTime() == t) {
+                System.out.println(list_of_workouts.get(i));;
+            }
+        }
+	}
 }
