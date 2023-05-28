@@ -29,21 +29,33 @@ public class EventSubmission {
     public String getStatus() {
         return submission_status;
     }
+    public String getDate(){
+        return submission_event_date;
+    }
+    public String getTime(){
+        return submission_event_time;
+    }
+
 
     /*Create New Event Submission*/
-    public createEventSubmission(int trainee_id, String summary, String event_date, String event_time){
+    public void createEventSubmission(int trainee_id, String summary, String event_date, String event_time){
         new EventSubmission(trainee_id, summary, "Unreviewed", event_date, event_time);
     }
 
     /*Deny Submission*/
-    public denySubmission(EventSubmission submission){
+    public void denySubmission(EventSubmission submission){
         submission.submission_status = "Denied";
     }
 
     /*Approve Submission*/
-    public approveSubmission(EventSubmission submission){
+    public void approveSubmission(EventSubmission submission){
         submission.submission_status = "Approved";
         setEvent(submission.submission_event_date, submission.submission_event_time, submission.submission_id, submission.submission_trainee_id, submission.submission_summary);
+    }
+    /*show submissions functions*/
+    public EventSubmission[] getSubmissionList()
+    {
+        return 0;
     }
 
 
