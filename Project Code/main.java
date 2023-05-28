@@ -5,7 +5,7 @@ public class main {
     public void manageHours(){
         /*Need to display List of Gyms Owned by called Owner */
         for(int i=0; i<ListOfGyms.size(); i++){
-            if(ListOfGyms[1].getOwner() == Owner.getName()){}
+            if(ListOfGyms[i].getOwner().equals(Owner.getName())){}
         }
         /*Select and use gym instance to set Hours */
     }
