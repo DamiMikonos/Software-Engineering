@@ -52,20 +52,16 @@ public class Event {
 
     public void setEvent(String event_date, String event_time, int event_id, String event_coordinator, String event_description){
         
-        for (String event_date : Event){
-            if this.event_date==event_date{
-                for (String event_time : Event){
-                    if this.event_time==event_time{
-                        
-                        this.event_status="verified";
-                        this.event_id=event_id;
-                        this.event_coordinator=event_coordinator;
-                        this.event_description=event_description;
-                    }
-                }
+        for (Event event : Event){
+            if (event.getDate()==event_date && event.getTime()==event_time){   
+                this.event_status="verified";
+                this.event_id=event_id;
+                this.event_coordinator=event_coordinator;
+                this.event_description=event_description;
             }
         }
     }
+}
+
     
 
-}
