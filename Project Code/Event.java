@@ -21,16 +21,16 @@ public class Event {
 
     /*Get functions */
 
-    public int getEventID() { 
+    public int getID() { 
         return event_id;
     }
-    public String getEventStatus(){
+    public String getStatus(){
         return event_status;
     }
-    public String getEventCoordinator(){
+    public String getCoordinator(){
         return event_coordinator;
     }
-    public String getEventDescription(){
+    public String getDescription(){
         return event_description;
     }
 
