@@ -33,31 +33,35 @@ public class Event {
     public String getDescription(){
         return event_description;
     }
+    public String getDate(){
+        return event_date;
+    }
+    public String getTime(){
+        return event_time;
+    }
+
+
 
     /*Search Events: Input date and outputs Event objects that are available (Available hours)*/
     public Event searchEvents(String date){
-        if (this.event_date==date AND this.event_status=="available") return this.Event;
+        if (this.event_date==date && this.event_status=="available") return this.Event;
         else return null;
     }
 
     /*Create new event*/
 
-    public setEvent(String event_date, String event_time, int event_id, String event_coordinator, String event_description){
+    public void setEvent(String event_date, String event_time, int event_id, String event_coordinator, String event_description){
         
-        for (String event_date : Event){
-            if this.event_date==event_date{
-                for (String event_time : Event){
-                    if this.event_time==event_time{
-                        
-                        this.event_status="verified";
-                        this.event_id=event_id;
-                        this.event_coordinator=event_coordinator;
-                        this.event_description=event_description;
-                    }
-                }
+        for (Event event : Event){
+            if (event.getDate()==event_date && event.getTime()==event_time){   
+                this.event_status="verified";
+                this.event_id=event_id;
+                this.event_coordinator=event_coordinator;
+                this.event_description=event_description;
             }
         }
     }
+}
+
     
 
-}
