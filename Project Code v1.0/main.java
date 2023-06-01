@@ -24,11 +24,10 @@ public class Main {
                 try {
                     date = dateFormat.parse(userInput);
                     Date currentDate = new Date();  // Get the current date
-
                     if (date.after(currentDate)) {
                         System.out.println("The input date is in the future.");
                     } else {
-                        System.out.println("The input date is not in the future.");
+                       throw new NoFutureDateException("The input date is not in the future.");
                     }
                 } catch (ParseException e) {
                     System.out.println("Invalid datetime format");
