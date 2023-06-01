@@ -28,12 +28,4 @@ public class Owner extends User
   public int getGyms(){
     return no_of_owned_Gyms;
   }
-
-
-  /*Managing Gym Hours */
-  public void manageHours(){
-    /*Need to display List of Gyms Owned by called Owner */
-    getName();
-    /*Select and use gym instance to set Hours */
-  }
 }

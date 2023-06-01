@@ -1,4 +1,5 @@
 import java.time.*;
+import java.util.Date;
 import java.util.ArrayList;
 
 public class Gym {
@@ -6,11 +7,11 @@ public class Gym {
     private String gym_city;
     private String gym_address;
     private int gym_number;
-    private LocalDateTime gym_hours;
+    private Date gym_hours;
     private String gym_owner;
     private ArrayList<Workout> list_of_workouts = new ArrayList<Workout>();
 
-    public Gym (String gym_name, String gym_city, String gym_address, int gym_number, LocalDateTime gym_hours, String gym_owner) {
+    public Gym (String gym_name, String gym_city, String gym_address, int gym_number, Date gym_hours, String gym_owner) {
         this.gym_name = gym_name;
         this.gym_city = gym_city;
         this.gym_address = gym_address;
@@ -36,8 +37,18 @@ public class Gym {
         return gym_number;
     }
 
-    public LocalDateTime getHours(){
+    public Date getHours(){
         return gym_hours;
+    }
+
+    public String getOwner(){
+        return gym_owner;
+    }
+
+    /*Set methods */
+
+    public void setDate(Date dateHours){
+        this.gym_hours = dateHours;
     }
 
     /*Search Gyms: Returns an array of Gym objects in specific city.*/
