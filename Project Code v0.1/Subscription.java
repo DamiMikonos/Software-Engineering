@@ -1,4 +1,5 @@
 import java.time.LocalDate;
+import java.util.Scanner;
 
 public class Subscription {
     private String subscriptionId;
@@ -46,13 +47,34 @@ public class Subscription {
     }
 
     public static void main(String[] args) {
-        // Create a new Subscription object
-        Subscription subscription = new Subscription("12345", LocalDate.now(), 12, 9.99);
+
+         // Get new subscription details from the console
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter new subscription ID: ");
+        String newSubscriptionId = scanner.nextLine();
+
+        System.out.print("Enter new subscription payment date (YYYY-MM-DD): ");
+        String newPaymentDateStr = scanner.nextLine();
+        LocalDate newPaymentDate = LocalDate.parse(newPaymentDateStr);
+
+        System.out.print("Enter new duration (months): ");
+        int newDuration = scanner.nextInt();
+
+        System.out.print("Enter new price: $");
+        double newPrice = scanner.nextDouble();
+
+        // Create a new Subscription object with the inputted details
+        Subscription subscription = new Subscription(newSubscriptionId, newPaymentDate, newDuration, newPrice);
 
         // Access and print subscription details
         System.out.println("Subscription ID: " + subscription.getSubscriptionId());
         System.out.println("Subscription Payment Date: " + subscription.getSubscriptionPaymentDate());
         System.out.println("Duration (months): " + subscription.getDuration());
         System.out.println("Price: $" + subscription.getPrice());
+    
+    scanner.close();
+
+        
     }
 }
