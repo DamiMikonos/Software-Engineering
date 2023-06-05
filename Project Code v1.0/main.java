@@ -27,7 +27,7 @@ public class Main {
                     if (date.after(currentDate)) {
                         System.out.println("The input date is in the future.");
                     } else {
-                       throw new NoFutureDateException("The input date is not in the future.");
+                       throw new NoFutureDateException("The input date is not in the future."); /*This and next Exception not completed */
                     }
                 } catch (ParseException e) {
                     System.out.println("Invalid datetime format");
@@ -43,6 +43,6 @@ public class Main {
     
     /*Main program */
     public static void main(String[] args){
-        manageHours();
+
     }
 }

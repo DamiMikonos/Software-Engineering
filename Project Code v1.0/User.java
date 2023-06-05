@@ -1,5 +1,9 @@
+import java.util.Scanner;
+import java.util.Random;
 public class User
 {
+  Scanner inputProfile = new Scanner(System.in);
+  Random rand = new Random();
   private int user_id;
   private String user_name;
   private String user_surname;
@@ -68,4 +72,41 @@ public class User
   public int getNumber(){
 		return user_number;
 	}
+
+  /*More methods */
+
+  public void showProfile(){
+    System.out.println("Choose action: 'Edit profile' or 'Create Report'");
+    String match = inputProfile.nextLine();
+    if (match == "Edit Profile"){
+      System.out.println("Choose the information to change: 'Name', 'Surname', 'Email', 'Number'");
+      String match2 = inputProfile.nextLine();
+      switch(match2){
+        case "Name":
+          setName(match2);
+          break;
+        case "Surname":
+          setSurname(match2);
+          break;
+        case "Email":
+          setEmail(match2);
+          break;
+        case "Number":
+          int num = Integer.parseInt(match2);
+          setNumber(num);
+          break;
+      }
+    }
+    else if (match == "Create Report"){
+      System.out.println("Complete the report");
+      System.out.println("Choose the category of the report");
+      String category = inputProfile.nextLine();
+      int id = rand.nextInt(999999)
+      String status = "To Do";
+      System.out.println("Tell us your problem");
+      String message = inputProfile.nextLine();
+      Report reportProfile = new Report(id, status, category, message);
+      System.out.println("Your report has been created and sent");
+    }
+  }
 }
