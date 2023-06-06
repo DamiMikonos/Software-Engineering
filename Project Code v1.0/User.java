@@ -101,7 +101,7 @@ public class User
       System.out.println("Complete the report");
       System.out.println("Choose the category of the report");
       String category = inputProfile.nextLine();
-      int id = rand.nextInt(999999)
+      int id = rand.nextInt(999999);
       String status = "To Do";
       System.out.println("Tell us your problem");
       String message = inputProfile.nextLine();

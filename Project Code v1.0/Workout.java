@@ -1,16 +1,20 @@
 import java.time.*; // For the date and time datatypes 
 import java.text.DateFormat;  
 import java.text.SimpleDateFormat;
+import java.util.*;
 
 public class Workout {
+  private int workout_id;
   private LocalDate workout_date;
   private LocalTime workout_time;
   private String workout_gym;
   private String workout_level;
   private int workout_availability; // Shows how many people already have a reservation for this workout
+  private ArrayList<Trainee> list_of_trainees = new ArrayList<Trainee>();
 
-  public Workout(LocalDate workout_date, LocalTime workout_time, String workout_gym, String workout_level, int workout_availability)
+  public Workout(int workout_id, LocalDate workout_date, LocalTime workout_time, String workout_gym, String workout_level, int workout_availability)
   {
+    this.workout_id = workout_id;
     this.workout_date = workout_date;
     this.workout_time = workout_time;
     this.workout_gym = workout_gym;
@@ -41,6 +45,10 @@ public class Workout {
   }
 
   /* Getters */
+
+  public int getID(){
+    return workout_id;
+  }
 
   public LocalDate getWorkoutDate(){
     return workout_date;
