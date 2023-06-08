@@ -1,22 +1,19 @@
-import java.time.*; // For the date and time datatypes 
 import java.text.DateFormat;  
 import java.text.SimpleDateFormat;
 import java.util.*;
 
 public class Workout {
   private int workout_id;
-  private LocalDate workout_date;
-  private LocalTime workout_time;
+  private Date workout_date;
   private String workout_gym;
   private String workout_level;
   private int workout_availability; // Shows how many people already have a reservation for this workout
   private ArrayList<Trainee> list_of_trainees = new ArrayList<Trainee>();
 
-  public Workout(int workout_id, LocalDate workout_date, LocalTime workout_time, String workout_gym, String workout_level, int workout_availability)
+  public Workout(int workout_id, Date workout_date, String workout_gym, String workout_level, int workout_availability)
   {
     this.workout_id = workout_id;
     this.workout_date = workout_date;
-    this.workout_time = workout_time;
     this.workout_gym = workout_gym;
     this.workout_level = workout_level;
     this.workout_availability = workout_availability;
@@ -24,12 +21,8 @@ public class Workout {
 
   /* Setters */
 
-  public void setDate(LocalDate workout_date) {
+  public void setDate(Date workout_date) {
     this.workout_date = workout_date;
-  }
-
-  public void setTime(LocalTime workout_time) {
-    this.workout_time = workout_time;
   }
 
   public void setGym(String workout_gym) {
@@ -50,12 +43,10 @@ public class Workout {
     return workout_id;
   }
 
-  public LocalDate getWorkoutDate(){
+  public Date getWorkoutDate(){
     return workout_date;
   }
-  public LocalTime getWorkoutTime(){
-    return workout_time;
-  }
+
   public String getWorkoutGym(){
     return workout_gym;
   }
@@ -74,11 +65,10 @@ public class Workout {
     /* Converting all the non-string data to string datatype */
     DateFormat dateFormat = new SimpleDateFormat("dd-mm");
     String date_string = dateFormat.format(workout_date);
-    String time_string = workout_time.toString();
     String avail_string = Integer.toString(workout_availability);
 
     /* Setting up an array of information to be returned */
-    String[] info_array = new String[] {date_string, time_string, this.workout_gym, this.workout_level, avail_string};
+    String[] info_array = new String[] {date_string, this.workout_gym, this.workout_level, avail_string};
 		return info_array;
   }
 

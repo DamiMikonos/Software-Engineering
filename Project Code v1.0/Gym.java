@@ -79,8 +79,12 @@ public class Gym {
 		list_of_workouts.remove(w);
 	}
 
+    public ArrayList<Workout> getList() {
+        return list_of_workouts;
+    }
+
     /* Returns a list of workouts that corresponds to the trainee's prefered date and time*/
-    public void getWorkoutByDateTime(LocalDate d, LocalTime t){
+    public void getWorkoutByDateTime(Date d, LocalTime t){
 		for (int i = 0; i < list_of_workouts.size(); i++) {
             if (list_of_workouts.get(i).getWorkoutDate() == d && list_of_workouts.get(i).getWorkoutTime() == t) {
                 System.out.println(list_of_workouts.get(i));;
