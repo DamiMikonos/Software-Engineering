@@ -80,5 +80,39 @@ public class Main {
         Score s = new Score(1, 1, 1, 10);
 
         s.getTraineeID();
+        
+        
+        // Prompt the user for report details
+        System.out.print("Enter report ID: ");
+        int reportId = scanner.nextInt();
+        scanner.nextLine(); // Consume the newline character
+
+        System.out.print("Enter report status: ");
+        String status = scanner.nextLine();
+
+        System.out.print("Enter report category: ");
+        String reportCategory = scanner.nextLine();
+
+        System.out.print("Enter report description: ");
+        String reportDescription = scanner.nextLine();
+        
+        LocalDate reportDate = LocalDate.now();
+
+
+        // Create the report instance
+        Report report = new Report(reportId, status, reportCategory, reportDescription, reportDate);
+
+        // Display the report details
+        System.out.println("Report created:");
+        System.out.println("Report ID: " + report.getReportId());
+        System.out.println("Status: " + report.getStatus());
+        System.out.println("Category: " + report.getReportCategory());
+        System.out.println("Description: " + report.getReportDescription());
+        System.out.println("Date: " + report.getReportDate());
+
+        // Close the scanner
+        scanner.close();
+        
+
     }
 }
