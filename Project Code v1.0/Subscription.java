@@ -47,34 +47,37 @@ public class Subscription {
     }
 
     public static void main(String[] args) {
+        // Define the choices
+        String[] subscriptionIds = { "A", "B", "C" };
+        LocalDate[] paymentDates = { LocalDate.now(), LocalDate.now(), LocalDate.now() };
+        int[] durations = { 1, 3, 6 };
+        double[] prices = { 10.0, 20.0, 30.0 };
 
-         // Get new subscription details from the console
+        // Display the available choices
+        System.out.println("Available Subscriptions:");
+        for (int i = 0; i < subscriptionIds.length; i++) {
+            System.out.println(i + 1 + ". Subscription " + subscriptionIds[i] + " - Duration: " + durations[i] + " months - Price: $" + prices[i]);
+        }
+
+        // Prompt the user to select a subscription
         Scanner scanner = new Scanner(System.in);
+        System.out.print("Select a subscription: ");
+        int choice = scanner.nextInt();
 
-        System.out.print("Enter new subscription ID: ");
-        String newSubscriptionId = scanner.nextLine();
+        // Validate the choice
+        if (choice >= 1 && choice <= subscriptionIds.length) {
+            // Create a new Subscription object with the chosen values
+            Subscription subscription = new Subscription(subscriptionIds[choice - 1], paymentDates[choice - 1], durations[choice - 1], prices[choice - 1]);
 
-        System.out.print("Enter new subscription payment date (YYYY-MM-DD): ");
-        String newPaymentDateStr = scanner.nextLine();
-        LocalDate newPaymentDate = LocalDate.parse(newPaymentDateStr);
+            // Access and print subscription details
+            System.out.println("Subscription ID: " + subscription.getSubscriptionId());
+            System.out.println("Subscription Payment Date: " + subscription.getSubscriptionPaymentDate());
+            System.out.println("Duration (months): " + subscription.getDuration());
+            System.out.println("Price: $" + subscription.getPrice());
+        } else {
+            System.out.println("Invalid choice. Please select a valid subscription.");
+        }
 
-        System.out.print("Enter new duration (months): ");
-        int newDuration = scanner.nextInt();
-
-        System.out.print("Enter new price: $");
-        double newPrice = scanner.nextDouble();
-
-        // Create a new Subscription object with the inputted details
-        Subscription subscription = new Subscription(newSubscriptionId, newPaymentDate, newDuration, newPrice);
-
-        // Access and print subscription details
-        System.out.println("Subscription ID: " + subscription.getSubscriptionId());
-        System.out.println("Subscription Payment Date: " + subscription.getSubscriptionPaymentDate());
-        System.out.println("Duration (months): " + subscription.getDuration());
-        System.out.println("Price: $" + subscription.getPrice());
-    
-    scanner.close();
-
-        
+        scanner.close();
     }
 }
