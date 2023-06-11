@@ -37,6 +37,7 @@ public class Report {
 
     public void setReportDate(LocalDate reportDate) {
         this.reportDate = reportDate;
+        
     }
 
     public void setStatus(String status) {
