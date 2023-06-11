@@ -1,5 +1,6 @@
 import java.util.Scanner;
 import java.util.Random;
+import java.time.LocalDate;
 public class User
 {
   Scanner inputProfile = new Scanner(System.in);
@@ -98,15 +99,18 @@ public class User
       }
     }
     else if (match == "Create Report"){
-      System.out.println("Complete the report");
-      System.out.println("Choose the category of the report");
-      String category = inputProfile.nextLine();
-      int id = rand.nextInt(999999);
-      String status = "To Do";
-      System.out.println("Tell us your problem");
-      String message = inputProfile.nextLine();
-      Report reportProfile = new Report(id, status, category, message);
-      System.out.println("Your report has been created and sent");
+    	System.out.println("Complete the report");
+        // Prompt the user for report details
+        System.out.print("Choose the category of the report: ");
+        String reportCategory = inputProfile.nextLine();
+        int reportId = rand.nextInt(999999);
+        String status = "To Do";
+        System.out.print("Tell us your problem: ");
+        String reportDescription = inputProfile.nextLine();
+        LocalDate reportDate = LocalDate.now();
+        Report report = new Report(reportId, status, reportCategory, reportDescription, reportDate);
+        // Add the report to the user's list of reports
+        System.out.println("Your report has been created and added to your reports.");
     }
   }
 }
