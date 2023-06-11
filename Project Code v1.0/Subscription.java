@@ -1,11 +1,17 @@
 import java.time.LocalDate;
-import java.util.Scanner;
+
 
 public class Subscription {
     private String subscriptionId;
     private LocalDate subscriptionPaymentDate;
     private int duration;
     private double price;
+    
+ // Payment card details
+    private String cardholderName;
+    private String cardNumber;
+    private String expirationDate;
+    private int cvv;
 
     public Subscription(String subscriptionId, LocalDate subscriptionPaymentDate, int duration, double price) {
         this.subscriptionId = subscriptionId;
@@ -45,39 +51,37 @@ public class Subscription {
     public void setPrice(double price) {
         this.price = price;
     }
+    
+    // Getters and setters for payment card details
+    public String getCardholderName() {
+        return cardholderName;
+    }
 
-    public static void main(String[] args) {
-        // Define the choices
-        String[] subscriptionIds = { "A", "B", "C" };
-        LocalDate[] paymentDates = { LocalDate.now(), LocalDate.now(), LocalDate.now() };
-        int[] durations = { 1, 3, 6 };
-        double[] prices = { 10.0, 20.0, 30.0 };
+    public void setCardholderName(String cardholderName) {
+        this.cardholderName = cardholderName;
+    }
 
-        // Display the available choices
-        System.out.println("Available Subscriptions:");
-        for (int i = 0; i < subscriptionIds.length; i++) {
-            System.out.println(i + 1 + ". Subscription " + subscriptionIds[i] + " - Duration: " + durations[i] + " months - Price: $" + prices[i]);
-        }
+    public String getCardNumber() {
+        return cardNumber;
+    }
 
-        // Prompt the user to select a subscription
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Select a subscription: ");
-        int choice = scanner.nextInt();
+    public void setCardNumber(String cardNumber) {
+        this.cardNumber = cardNumber;
+    }
 
-        // Validate the choice
-        if (choice >= 1 && choice <= subscriptionIds.length) {
-            // Create a new Subscription object with the chosen values
-            Subscription subscription = new Subscription(subscriptionIds[choice - 1], paymentDates[choice - 1], durations[choice - 1], prices[choice - 1]);
+    public String getExpirationDate() {
+        return expirationDate;
+    }
 
-            // Access and print subscription details
-            System.out.println("Subscription ID: " + subscription.getSubscriptionId());
-            System.out.println("Subscription Payment Date: " + subscription.getSubscriptionPaymentDate());
-            System.out.println("Duration (months): " + subscription.getDuration());
-            System.out.println("Price: $" + subscription.getPrice());
-        } else {
-            System.out.println("Invalid choice. Please select a valid subscription.");
-        }
+    public void setExpirationDate(String expirationDate) {
+        this.expirationDate = expirationDate;
+    }
 
-        scanner.close();
+    public int getCvv() {
+        return cvv;
+    }
+
+    public void setCvv(int cvv) {
+        this.cvv = cvv;
     }
 }
